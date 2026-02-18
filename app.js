@@ -5,6 +5,22 @@
    ========================================================= */
 
 
+
+/* ================= SERVICE WORKER REGISTRATION ================= */
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("./service-worker.js")
+      .then(reg => {
+        console.log("Service Worker Registered:", reg.scope);
+      })
+      .catch(err => {
+        console.log("Service Worker Failed:", err);
+      });
+  });
+}
+
 /* ================= FIREBASE SETUP ================= */
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
