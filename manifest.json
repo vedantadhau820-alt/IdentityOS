@@ -1,6 +1,6 @@
 {
-  "name": "Project 90",
-  "short_name": "P90",
+  "name": "IdentityOS",
+  "short_name": "IdentityOS",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#111111",
