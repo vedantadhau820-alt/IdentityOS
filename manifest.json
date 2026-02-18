@@ -1,9 +1,21 @@
 {
   "name": "Project 90",
-  "short_name": "Project90",
-  "start_url": ".",
+  "short_name": "P90",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#111111",
   "theme_color": "#00ff99",
-  "icons": []
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "icon.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
 }
