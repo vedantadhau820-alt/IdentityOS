@@ -1,0 +1,9 @@
+{
+  "name": "Project 90",
+  "short_name": "Project90",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#111111",
+  "theme_color": "#00ff99",
+  "icons": []
+}

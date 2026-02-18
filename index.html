@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- =====================================================
+       META CONFIGURATION
+       ===================================================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- App Title -->
+  <title>Project 90</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       APP HEADER
+       ===================================================== -->
+  <header>
+    <h1>Project 90</h1>
+    <p id="todayDate"></p>
+    <p id="userIdDisplay"></p>
+  </header>
+
+
+  <!-- =====================================================
+       IDENTITY CORE DASHBOARD
+       Shows:
+       - Discipline Streak
+       - Courage Under Fear
+       - Strategic Score
+       ===================================================== -->
+  <section class="card identity-card">
+
+    <h2>Identity Core</h2>
+
+    <div class="identity-grid">
+
+      <!-- Discipline Streak -->
+      <div class="metric">
+        <p class="metric-label">Streak</p>
+        <p id="streakDisplay" class="metric-value">0</p>
+      </div>
+
+      <!-- Courage Counter -->
+      <div class="metric">
+        <p class="metric-label">Courage</p>
+        <p id="courageDisplay" class="metric-value">0</p>
+      </div>
+
+      <!-- Strategic Score -->
+      <div class="metric">
+        <p class="metric-label">Strategic</p>
+        <p id="strategicScoreDisplay" class="metric-value">0</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       STABILITY PROTOCOL
+       Mental Reset + Strategic Reframing
+       ===================================================== -->
+  <section class="card">
+
+    <h2>Stability Protocol</h2>
+
+    <!-- Breathing Phase -->
+    <div id="breathingSection">
+      <div id="breathingCircle" class="circle"></div>
+      <p id="breathingText">Press Start</p>
+      <button id="startBreathingBtn" onclick="startBreathing()">Start</button>
+    </div>
+
+    <!-- Reflection Phase -->
+    <div id="reflectionSection" style="display:none;">
+
+      <!-- Situation Description -->
+      <p>What is actually happening?</p>
+      <input type="text" id="situationInput" placeholder="Describe situation">
+
+      <!-- Trigger Type -->
+      <p>Trigger Type</p>
+      <select id="triggerSelect">
+        <option value="social">Social</option>
+        <option value="authority">Authority</option>
+        <option value="rejection">Rejection</option>
+        <option value="body">Body Image</option>
+        <option value="failure">Failure</option>
+        <option value="unknown">Unknown</option>
+      </select>
+
+      <!-- Reframe -->
+      <p>Threat or Challenge?</p>
+      <select id="reframeSelect">
+        <option value="threat">Threat</option>
+        <option value="challenge">Challenge</option>
+      </select>
+
+      <!-- Emotional Intensity -->
+      <p>Emotion Intensity (1-10)</p>
+      <input type="range" id="intensityInput" min="1" max="10" value="5">
+      <p id="intensityValue">5</p>
+
+      <!-- Controlled Action -->
+      <p>What is your next controlled action?</p>
+      <input type="text" id="actionInput" placeholder="Next move">
+
+      <!-- Second Order Thinking -->
+      <p>If you take this action, what likely happens next?</p>
+      <input type="text" id="secondOrderInput" placeholder="Expected outcome">
+
+      <button id="stabilityBtn" onclick="completeStability()">
+        Complete Stability
+      </button>
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       WORKOUT MISSION
+       Physical Identity Reinforcement
+       ===================================================== -->
+  <section class="card workout-card">
+
+    <h2>Workout Mission</h2>
+
+    <!-- Workout Type -->
+    <select id="workoutType">
+      <option value="push">Push</option>
+      <option value="pull">Pull</option>
+      <option value="legs">Legs</option>
+      <option value="cardio">Cardio</option>
+      <option value="full">Full Body</option>
+    </select>
+
+    <!-- Timer -->
+    <div id="workoutTimer">00:00</div>
+
+    <!-- Controls -->
+    <button id="startWorkoutBtn" onclick="startWorkout()">Start</button>
+    <button id="finishWorkoutBtn" onclick="finishWorkout()" style="display:none;">
+      Finish
+    </button>
+
+    <!-- Result Display -->
+    <p id="workoutResult"></p>
+
+  </section>
+
+
+  <!-- =====================================================
+       WEEKLY PHYSICAL SUMMARY
+       ===================================================== -->
+  <section class="card">
+    <h2>Weekly Physical Rating</h2>
+    <p id="weeklyWorkoutRating">0/7 Workouts</p>
+  </section>
+
+
+  <!-- =====================================================
+       SOCIAL MISSION
+       Exposure + Courage Tracking
+       ===================================================== -->
+  <section class="card social-card">
+
+    <h2>Social Mission</h2>
+
+    <!-- Mission Setup -->
+    <p>Rep Type</p>
+    <select id="socialType">
+      <option value="greet">Initiate Greeting</option>
+      <option value="question">Ask a Question</option>
+      <option value="opinion">Share Opinion</option>
+      <option value="eye">Hold Eye Contact</option>
+      <option value="conversation">Start Conversation</option>
+    </select>
+
+    <p>Difficulty Level</p>
+    <select id="socialDifficulty">
+      <option value="1">Easy</option>
+      <option value="2">Medium</option>
+      <option value="3">Hard</option>
+    </select>
+
+    <!-- Start Mission -->
+    <button id="startSocialBtn" onclick="startSocialMission()">
+      Start Mission
+    </button>
+
+    <!-- Active Phase -->
+    <div id="missionActive" style="display:none;">
+      <p>Mission Active. Go execute.</p>
+      <button onclick="openReflection()">I Did It</button>
+    </div>
+
+    <!-- Reflection Phase -->
+    <div id="socialReflection" style="display:none;">
+      <p>Anxiety Intensity (1–10)</p>
+      <input type="range" id="socialIntensity" min="1" max="10" value="5">
+      <p id="socialIntensityValue">5</p>
+
+      <p>What happened?</p>
+      <input type="text" id="socialOutcome" placeholder="Brief summary">
+
+      <button id="socialBtn" onclick="completeSocialMission()">
+        Complete Mission
+      </button>
+    </div>
+
+    <p id="socialResult"></p>
+
+  </section>
+
+
+  <!-- =====================================================
+       OBSERVER MODE
+       Situational Awareness + Strategic Entry
+       ===================================================== -->
+  <section class="card observer-card">
+
+    <h2>Observer Mode</h2>
+
+    <!-- Activation -->
+    <button id="startObserverBtn" onclick="startObserverMode()">
+      Activate
+    </button>
+
+    <!-- Silent Scan Phase -->
+    <div id="observerActive" style="display:none;">
+      <p id="observerTimer">Observe silently...</p>
+    </div>
+
+    <!-- Strategic Questions -->
+    <div id="observerQuestions" style="display:none;">
+
+      <p>Who is leading the conversation?</p>
+      <input type="text" id="observerLeader">
+
+      <p>Who seems silent or withdrawn?</p>
+      <input type="text" id="observerSilent">
+
+      <p>What is the emotional tone?</p>
+      <input type="text" id="observerTone">
+
+      <p>Where can you contribute once?</p>
+      <input type="text" id="observerAction">
+
+      <p>Primary focus target</p>
+      <input type="text" id="observerTarget" placeholder="Name or role">
+
+      <p>Single sharp move</p>
+      <select id="entryMove">
+        <option value="question">Ask strategic question</option>
+        <option value="statement">Make concise statement</option>
+        <option value="humor">Controlled humor</option>
+        <option value="support">Back someone intelligently</option>
+      </select>
+
+      <button onclick="completeObserverMode()">
+        Complete Observation
+      </button>
+
+    </div>
+
+    <p id="observerResult"></p>
+
+  </section>
+
+
+  <!-- =====================================================
+       SCRIPT LOADING
+       ===================================================== -->
+  <script type="module" src="app.js"></script>
+
+</body>
+</html>

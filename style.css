@@ -1,0 +1,147 @@
+/* =========================================================
+   PROJECT 90 - CORE STYLESHEET
+   Theme: Dark / Sharp / Minimal
+   ========================================================= */
+
+
+/* ================= GLOBAL LAYOUT ================= */
+
+body {
+  font-family: Arial, sans-serif;
+  background: #111;            /* Deep dark background */
+  color: white;                /* High contrast text */
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+}
+
+
+/* ================= CARD SYSTEM ================= */
+/* Used for all major sections (Stability, Workout, etc.) */
+
+.card {
+  background: #1f1f1f;         /* Slightly lighter than body */
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+
+/* ================= BUTTON STYLING ================= */
+
+button {
+  padding: 10px 20px;
+  background: #00ff99;         /* Accent color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;   /* Smooth hover animation */
+}
+
+/* Hover effect for interactivity */
+button:hover {
+  transform: scale(1.05);
+  background: #00cc77;         /* Slightly darker green */
+}
+
+
+/* ================= FORM ELEMENTS ================= */
+/* Inputs and dropdowns */
+
+input,
+select {
+  width: 90%;
+  padding: 8px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+
+/* ================= BREATHING CIRCLE ================= */
+/* Used in Stability Protocol */
+
+.circle {
+  width: 120px;
+  height: 120px;
+  margin: 20px auto;
+  border-radius: 50%;
+  background: #00ff99;
+  transition: transform 4s ease-in-out;
+}
+
+/* Inhale animation */
+.breathe-in {
+  transform: scale(1.5);
+}
+
+/* Exhale animation */
+.breathe-out {
+  transform: scale(1);
+}
+
+
+/* ================= STABILITY REFLECTION ================= */
+
+#reflectionSection {
+  margin-top: 20px;
+}
+
+
+/* ================= WORKOUT SECTION ================= */
+
+.workout-card {
+  background: linear-gradient(135deg, #111, #1f1f1f);
+  border: 1px solid #00ff99;   /* Subtle accent border */
+}
+
+/* Workout Timer Display */
+#workoutTimer {
+  font-size: 32px;
+  margin: 20px 0;
+  font-weight: bold;
+  color: #00ff99;
+}
+
+
+/* ================= IDENTITY CORE CARD ================= */
+
+.identity-card {
+  border: 1px solid #00ff99;
+}
+
+.identity-grid {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.metric {
+  text-align: center;
+}
+
+.metric-label {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 5px;
+}
+
+.metric-value {
+  font-size: 28px;
+  font-weight: bold;
+  color: #00ff99;
+}
+
+/* ================= OPTIONAL FUTURE ENHANCEMENTS ================= */
+/* Reserved space for future UI improvements */
+
+/*
+.social-card {
+  border-left: 3px solid #00ff99;
+}
+
+.observer-card {
+  border-left: 3px solid #00ccff;
+}
+*/
